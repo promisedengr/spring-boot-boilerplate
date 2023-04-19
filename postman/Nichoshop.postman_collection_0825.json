@@ -1,0 +1,3168 @@
+{
+	"info": {
+		"_postman_id": "422f0691-d49e-43d0-931e-406ba5ae4fd6",
+		"name": "Nichoshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21147329"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User > Sign in",
+					"item": [
+						{
+							"name": "SignUp",
+							"protocolProfileBehavior": {
+								"strictSSL": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"richarddavidson1210@gmail.com\",\r\n  \"grecaptcha\": \"6Ld9ZTgdAAAAAFN8gTK7t4qY9kg5UPwSDxIANoOQ\",\r\n  \"name\": \"Richard Davidson\",\r\n  \"accountType\": 1,\r\n  \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/signup",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SignUp - Resend Email",
+							"protocolProfileBehavior": {
+								"strictSSL": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/signup/resend-email?user=richarddavidson1210@gmail.com",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"signup",
+										"resend-email"
+									],
+									"query": [
+										{
+											"key": "user",
+											"value": "richarddavidson1210@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SignUp - Confirm Code from Email",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/signup/confirm?code=f6ebdc1119a0a9afa53e56cc66301018",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"signup",
+										"confirm"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "f6ebdc1119a0a9afa53e56cc66301018"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "SigninController"
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"login\" :\"richarddavidson1210@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"grecaptcha\": \"6Ld9ZTgdAAAAAFN8gTK7t4qY9kg5UPwSDxIANoOQ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "signin",
+													"value": "Nuru@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123456",
+													"type": "text"
+												},
+												{
+													"key": "grecaptcha",
+													"value": "6Ld9ZTgdAAAAAFN8gTK7t4qY9kg5UPwSDxIANoOQ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}/signin",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"signin"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 07:02:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "106"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 7,\n    \"userId\": \"Nurusultan111\",\n    \"firstName\": \"test\",\n    \"lastName\": \"user\",\n    \"email\": \"Nuru@gmail.com\",\n    \"roles\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "Login - Send SUCBYTYPE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/login/send-suc?suc_type=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login",
+										"send-suc"
+									],
+									"query": [
+										{
+											"key": "suc_type",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login - Confirm SUC",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/login/confirm-suc?suc_type=1&suc=123123",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login",
+										"confirm-suc"
+									],
+									"query": [
+										{
+											"key": "suc_type",
+											"value": "1",
+											"description": "0: email when forgot password.\n1: twiliio when forgot password.\n2: email when temporary password.\n3: twilio when temporary password.\n4: twilio when add phone.\n5: email when admin temporary password\n6: account\n"
+										},
+										{
+											"key": "suc",
+											"value": "123123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login - Check User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/login/check-user?user=developeradmin&greptcha=adsfadfadfadsfadsf123123",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login",
+										"check-user"
+									],
+									"query": [
+										{
+											"key": "user",
+											"value": "developeradmin"
+										},
+										{
+											"key": "greptcha",
+											"value": "adsfadfadfadsfadsf123123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login - Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":\"1\",\r\n    \"confirm\":\"1\",\r\n    \"username\":\"David\",\r\n    \"token\":\"123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/login/change-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login - Logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/login/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Add a mobile number",
+					"item": [
+						{
+							"name": "Login - Add Phone",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/login/add-phone?phone=12525912005",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login",
+										"add-phone"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "12525912005"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "LoginController"
+				},
+				{
+					"name": "User > Addresses",
+					"item": [
+						{
+							"name": "ChangeAddress",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"nichoshop\",\r\n            \"address1\":\"adsfaf\",\r\n            \"address2\":\"adsfaf\",\r\n            \"city\":\"adsfaf\",\r\n            \"country\":\"af\",\r\n            \"state\":\"adsfaf\",\r\n            \"phone\":\"adsfaf\",\r\n            \"zip\" : \"adfadf\",\r\n            \"name\":\"adsfaf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/address/changeAddress",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"address",
+										"changeAddress"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ChangeAddress",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n            \"userid\":\"Nurus\",\r\n            \"address1\":\"adsfaf\",\r\n            \"address2\":\"adsfaf\",\r\n            \"city\":\"adsfaf\",\r\n            \"country\":\"af\",\r\n            \"state\":\"adsfaf\",\r\n            \"phones\":[\"adsfaf\"],\r\n            \"zip\" : \"adfadf\",\r\n            \"name\":\"adsfaf\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/account/changeAddress",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"account",
+												"changeAddress"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 09:36:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "15"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"ok\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GetAddresses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/address/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"address",
+										"list"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "GetAddresses",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/address/1?",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"address",
+												"1"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 09:47:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "179"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"list\": [\n        {\n            \"id\": 2,\n            \"name\": \"123\",\n            \"userId\": 1,\n            \"address1\": \"123\",\n            \"address2\": \"123\",\n            \"city\": \"123\",\n            \"state\": \"213\",\n            \"zip\": \"123\",\n            \"country\": \"12\",\n            \"phones\": [\n                \"123\"\n            ],\n            \"addressType\": 123,\n            \"status\": 213\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "CreateAddress",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"fadfaf\",\r\n    \"address1\": \"fadsfadf\",\r\n    \"address2\":\"fadfdafff\",\r\n    \"city\": \"fdfdffff\",\r\n    \"state\": \"KKKLLL\",\r\n    \"zip\": \"20222\",\r\n    \"country\":\"kk\",\r\n    \"phone\":\"+1231231123\",\r\n    \"addressType\":1,\r\n    \"status\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/address",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"address"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CreateAddress",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n            \"userId\":1,\r\n            \"name\":\"fadfaf\",\r\n            \"address1\": \"fadsfadf\",\r\n            \"address2\":\"fadfdafff\",\r\n            \"city\": \"fdfdffff\",\r\n            \"state\": \"KKKLLL\",\r\n            \"zip\": \"20222\",\r\n            \"country\":\"kk\",\r\n            \"phones\":[\"+1212131\",\"+23213\"],\r\n            \"addressType\":1,\r\n            \"status\":1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/address/1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"address",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 09:49:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "15"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"ok\"\n}"
+								}
+							]
+						},
+						{
+							"name": "CreateAddress Temp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\":\"fadfaf\",\r\n            \"address1\": \"fadsfadf\",\r\n            \"address2\":\"fadfdafff\",\r\n            \"city\": \"fdfdffff\",\r\n            \"state\": \"KKKLLL\",\r\n            \"zip\": \"20222\",\r\n            \"country\":\"kk\",\r\n            \"phone\":\"+121213123213\",\r\n            \"addressType\":1,\r\n            \"status\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/address/temp",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"address",
+										"temp"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CreateAddress",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n            \"userId\":1,\r\n            \"name\":\"fadfaf\",\r\n            \"address1\": \"fadsfadf\",\r\n            \"address2\":\"fadfdafff\",\r\n            \"city\": \"fdfdffff\",\r\n            \"state\": \"KKKLLL\",\r\n            \"zip\": \"20222\",\r\n            \"country\":\"kk\",\r\n            \"phones\":[\"+1212131\",\"+23213\"],\r\n            \"addressType\":1,\r\n            \"status\":1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/address/1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"address",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 09:49:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "15"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"ok\"\n}"
+								}
+							]
+						},
+						{
+							"name": "UpdateAddress",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\":\"fadfaf\",\r\n            \"address1\": \"fadsfadf\",\r\n            \"address2\":\"fadfdafff\",\r\n            \"city\": \"fdfdffff\",\r\n            \"state\": \"KKKLLL\",\r\n            \"zip\": \"20222\",\r\n            \"country\":\"kk\",\r\n            \"phones\":[\"+1212131\",\"+23213\"],\r\n            \"addressType\":1,\r\n            \"status\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/address/temp",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"address",
+										"temp"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "CreateAddress",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n            \"userId\":1,\r\n            \"name\":\"fadfaf\",\r\n            \"address1\": \"fadsfadf\",\r\n            \"address2\":\"fadfdafff\",\r\n            \"city\": \"fdfdffff\",\r\n            \"state\": \"KKKLLL\",\r\n            \"zip\": \"20222\",\r\n            \"country\":\"kk\",\r\n            \"phones\":[\"+1212131\",\"+23213\"],\r\n            \"addressType\":1,\r\n            \"status\":1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/address/1",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"address",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 09:49:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "15"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"ok\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Address by Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/address/type",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"address",
+										"type"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Account",
+					"item": [
+						{
+							"name": "ChangeAccountType",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"Nur\",\r\n            \"accountType\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/changeType",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"changeType"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangeUsername",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"Nurusultan\",\r\n            \"newUsername\":\"Nurus\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/changeUsername",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"changeUsername"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ChangeUsername",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n            \"userid\":\"Nurusultan\",\r\n            \"newUsername\":\"Nurus\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/account/changeUsername",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"account",
+												"changeUsername"
+											]
+										}
+									},
+									"status": "Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 09:50:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "9738"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'Nurus' for key 'userid'\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat com.mysql.jdbc.Util.handleNewInstance(Util.java:377)\r\n\tat com.mysql.jdbc.Util.getInstance(Util.java:360)\r\n\tat com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)\r\n\tat com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)\r\n\tat com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)\r\n\tat com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)\r\n\tat com.mysql.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:1288)\r\n\tat com.mysql.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:794)\r\n\tat com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2141)\r\n\tat com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2077)\r\n\tat com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2062)\r\n\tat com.zaxxer.hikari.proxy.PreparedStatementProxy.executeUpdate(PreparedStatementProxy.java:61)\r\n\tat com.zaxxer.hikari.proxy.PreparedStatementJavassistProxy.executeUpdate(PreparedStatementJavassistProxy.java)\r\n\tat scala.slick.driver.JdbcInvokerComponent$UpdateInvoker.$anonfun$update$1(JdbcInvokerComponent.scala:88)\r\n\tat scala.slick.driver.JdbcInvokerComponent$UpdateInvoker.$anonfun$update$1$adapted(JdbcInvokerComponent.scala:84)\r\n\tat scala.slick.jdbc.JdbcBackend$SessionDef.withPreparedStatement(JdbcBackend.scala:191)\r\n\tat scala.slick.jdbc.JdbcBackend$SessionDef.withPreparedStatement$(JdbcBackend.scala:186)\r\n\tat scala.slick.jdbc.JdbcBackend$BaseSession.withPreparedStatement(JdbcBackend.scala:389)\r\n\tat scala.slick.driver.JdbcInvokerComponent$UpdateInvoker.update(JdbcInvokerComponent.scala:84)\r\n\tat com.nichoshop.services.user.UsersService.$anonfun$changeUsername$1(UsersService.scala:200)\r\n\tat com.nichoshop.models.helpers.DB$.$anonfun$write$1(DB.scala:19)\r\n\tat scala.slick.backend.DatabaseComponent$DatabaseDef.withSession(DatabaseComponent.scala:34)\r\n\tat scala.slick.backend.DatabaseComponent$DatabaseDef.withSession$(DatabaseComponent.scala:30)\r\n\tat scala.slick.jdbc.JdbcBackend$DatabaseFactoryDef$$anon$3.withSession(JdbcBackend.scala:46)\r\n\tat com.nichoshop.models.helpers.DB$.write(DB.scala:17)\r\n\tat com.nichoshop.services.user.UsersService.changeUsername(UsersService.scala:199)\r\n\tat com.nichoshop.servlets.user.AccountController.$anonfun$new$5(AccountController.scala:100)\r\n\tat org.scalatra.ScalatraBase.liftAction(ScalatraBase.scala:280)\r\n\tat org.scalatra.ScalatraBase.$anonfun$invoke$1(ScalatraBase.scala:274)\r\n\tat org.scalatra.ApiFormats.withRouteMultiParams(ApiFormats.scala:183)\r\n\tat org.scalatra.ApiFormats.withRouteMultiParams$(ApiFormats.scala:169)\r\n\tat com.nichoshop.servlets.user.AccountController.withRouteMultiParams(AccountController.scala:21)\r\n\tat org.scalatra.ScalatraBase.invoke(ScalatraBase.scala:273)\r\n\tat org.scalatra.ScalatraBase.invoke$(ScalatraBase.scala:272)\r\n\tat com.nichoshop.servlets.user.AccountController.org$scalatra$json$JsonSupport$$super$invoke(AccountController.scala:21)\r\n\tat org.scalatra.json.JsonSupport.$anonfun$invoke$1(JsonSupport.scala:90)\r\n\tat org.scalatra.ApiFormats.withRouteMultiParams(ApiFormats.scala:183)\r\n\tat org.scalatra.ApiFormats.withRouteMultiParams$(ApiFormats.scala:169)\r\n\tat com.nichoshop.servlets.user.AccountController.withRouteMultiParams(AccountController.scala:21)\r\n\tat org.scalatra.json.JsonSupport.invoke(JsonSupport.scala:84)\r\n\tat org.scalatra.json.JsonSupport.invoke$(JsonSupport.scala:83)\r\n\tat com.nichoshop.servlets.user.AccountController.invoke(AccountController.scala:21)\r\n\tat org.scalatra.ScalatraBase.$anonfun$runRoutes$3(ScalatraBase.scala:248)\r\n\tat scala.Option.flatMap(Option.scala:188)\r\n\tat org.scalatra.ScalatraBase.$anonfun$runRoutes$1(ScalatraBase.scala:246)\r\n\tat scala.collection.immutable.Stream.flatMap(Stream.scala:493)\r\n\tat org.scalatra.ScalatraBase.runRoutes(ScalatraBase.scala:245)\r\n\tat org.scalatra.ScalatraBase.runRoutes$(ScalatraBase.scala:243)\r\n\tat com.nichoshop.servlets.customer.CustomerController.runRoutes(CustomerController.scala:13)\r\n\tat org.scalatra.ScalatraBase.runActions$1(ScalatraBase.scala:169)\r\n\tat org.scalatra.ScalatraBase.$anonfun$executeRoutes$6(ScalatraBase.scala:181)\r\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\r\n\tat org.scalatra.ScalatraBase.cradleHalt(ScalatraBase.scala:199)\r\n\tat org.scalatra.ScalatraBase.executeRoutes(ScalatraBase.scala:181)\r\n\tat org.scalatra.ScalatraBase.executeRoutes$(ScalatraBase.scala:150)\r\n\tat com.nichoshop.servlets.customer.CustomerController.executeRoutes(CustomerController.scala:13)\r\n\tat org.scalatra.ScalatraBase.$anonfun$handle$1(ScalatraBase.scala:123)\r\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\r\n\tat scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)\r\n\tat org.scalatra.DynamicScope.withResponse(DynamicScope.scala:79)\r\n\tat org.scalatra.DynamicScope.withResponse$(DynamicScope.scala:77)\r\n\tat com.nichoshop.servlets.customer.CustomerController.withResponse(CustomerController.scala:13)\r\n\tat org.scalatra.DynamicScope.$anonfun$withRequestResponse$1(DynamicScope.scala:59)\r\n\tat scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)\r\n\tat org.scalatra.DynamicScope.withRequest(DynamicScope.scala:70)\r\n\tat org.scalatra.DynamicScope.withRequest$(DynamicScope.scala:68)\r\n\tat com.nichoshop.servlets.customer.CustomerController.withRequest(CustomerController.scala:13)\r\n\tat org.scalatra.DynamicScope.withRequestResponse(DynamicScope.scala:58)\r\n\tat org.scalatra.DynamicScope.withRequestResponse$(DynamicScope.scala:56)\r\n\tat com.nichoshop.servlets.customer.CustomerController.withRequestResponse(CustomerController.scala:13)\r\n\tat org.scalatra.ScalatraBase.handle(ScalatraBase.scala:123)\r\n\tat org.scalatra.ScalatraBase.handle$(ScalatraBase.scala:119)\r\n\tat com.nichoshop.servlets.customer.CustomerController.org$scalatra$servlet$ServletBase$$super$handle(CustomerController.scala:13)\r\n\tat org.scalatra.servlet.ServletBase.handle(ServletBase.scala:53)\r\n\tat org.scalatra.servlet.ServletBase.handle$(ServletBase.scala:46)\r\n\tat com.nichoshop.servlets.customer.CustomerController.handle(CustomerController.scala:13)\r\n\tat org.scalatra.ScalatraServlet.service(ScalatraServlet.scala:65)\r\n\tat org.scalatra.ScalatraServlet.service$(ScalatraServlet.scala:64)\r\n\tat com.nichoshop.servlets.customer.CustomerController.service(CustomerController.scala:13)\r\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:790)\r\n\tat org.eclipse.jetty.servlet.ServletHolder$NotAsync.service(ServletHolder.java:1450)\r\n\tat org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)\r\n\tat org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)\r\n\tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)\r\n\tat org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:602)\r\n\tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)\r\n\tat org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)\r\n\tat org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)\r\n\tat org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)\r\n\tat org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1435)\r\n\tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)\r\n\tat org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)\r\n\tat org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)\r\n\tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)\r\n\tat org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)\r\n\tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)\r\n\tat org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191)\r\n\tat org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)\r\n\tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)\r\n\tat org.eclipse.jetty.server.Server.handle(Server.java:516)\r\n\tat org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)\r\n\tat org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)\r\n\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)\r\n\tat org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)\r\n\tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)\r\n\tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)\r\n\tat org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)\r\n\tat org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:383)\r\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)\r\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)\r\n\tat java.lang.Thread.run(Thread.java:750)\r\n"
+								}
+							]
+						},
+						{
+							"name": "ChangeEmail",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"developeradmin\",\r\n            \"newEmail\":\"Nurus@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/changeEmail",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"changeEmail"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ChangeEmail",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n            \"userid\":\"Nurus\",\r\n            \"newEmail\":\"Nurus@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/account/changeEmail",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"account",
+												"changeEmail"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 09:50:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "15"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"ok\"\n}"
+								}
+							]
+						},
+						{
+							"name": "ChangePhone",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"Nurus\",\r\n            \"newPhone\":\"adffafd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/changePhone",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"changePhone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangePassword",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"Nurus\",\r\n            \"newPhone\":\"adffafd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/changePassword",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"changePassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ChangeAddress",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"Nurus\",\r\n            \"address1\":\"adsfaf\",\r\n            \"address2\":\"adsfaf\",\r\n            \"city\":\"adsfaf\",\r\n            \"country\":\"af\",\r\n            \"state\":\"adsfaf\",\r\n            \"phones\":[\"adsfaf\"],\r\n            \"zip\" : \"adfadf\",\r\n            \"name\":\"adsfaf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/changePhone",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"changePhone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ConfirmSUC",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"Nurus\",\r\n            \"suc\":\"adffafd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/confirm_suc",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"confirm_suc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SendSUC",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"userid\":\"nursultansaudirbaev157@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/send_suc",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"send_suc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateBusinessData",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"1\",\r\n    \"address\":{\r\n        \"name\":\"fadfaf\",\r\n        \"address1\": \"fadsfadf\",\r\n        \"address2\":\"fadfdafff\",\r\n        \"city\": \"fdfdffff\",\r\n        \"state\": \"KKKLLL\",\r\n        \"zip\": \"20222\",\r\n        \"country\":\"kk\",\r\n        \"phone\":\"+1231231123\",\r\n        \"addressType\":1,\r\n        \"status\":1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/account/business-details",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"account",
+										"business-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account Data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Messages (section)",
+					"item": [
+						{
+							"name": "Get Message",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/message?id=0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Move Folder",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [3,5,6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/move-folder?folderId=6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"move-folder"
+									],
+									"query": [
+										{
+											"key": "folderId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Move Trash",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [3,5,6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/move-trash",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"move-trash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Count",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/all-count",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"all-count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/all",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Inbox",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/inbox",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"inbox"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Sent",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/sent",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"sent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Trash",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/trash",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"trash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get A folder",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/folder?folderId=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"folder"
+									],
+									"query": [
+										{
+											"key": "folderId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/search?keyword=any foler",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "any foler"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SearchBySenderName",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/search/sender-name?senderName=myNaem",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"search",
+										"sender-name"
+									],
+									"query": [
+										{
+											"key": "senderName",
+											"value": "myNaem"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get A folder Copy 3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/search/item?itmeId=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"search",
+										"item"
+									],
+									"query": [
+										{
+											"key": "itmeId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetByMark",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [3,5,6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/read",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"read"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UnreadByMark",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [3,5,6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/unread",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"unread"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get High Prorities",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [3,5,6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/high-priority",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"high-priority"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Low Priorities",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [3,5,6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/low-priority",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"low-priority"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Folder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/folder?title=this is",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"folder"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "this is"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete FolderById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/folder?folderId=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"folder"
+									],
+									"query": [
+										{
+											"key": "folderId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rename Folder",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/folder?title=this is&folderId=5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"folder"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "this is"
+										},
+										{
+											"key": "folderId",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folder List",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/message/folder/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"message",
+										"folder",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Seller Central > Create listing (standard)",
+					"item": [
+						{
+							"name": "Create Item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"catId\" : 1, \r\n            \"title\": \"My Item\",\r\n            \"condId\" :1, \r\n            \"conditions\": 1, \r\n            \"image\": \"1.jpg\",\r\n            \"images\": [\"1.png\", \"2.png\", \"3.png\"],\r\n            \"currency\":1,\r\n            \"condDesc\": \"this is optional field.\", \r\n            \"itemDescription\": \"Option[String]\",\r\n            \"listingFormat\": 1,\r\n            \"nowPrice\": 1,\r\n            \"quantity\": 1,\r\n            \"listingDuration\": 1,\r\n            \"startingPrice\" : 1,\r\n            \"reservePrice\" : 1,\r\n            \"domesticService\" : 1,\r\n            \"domesticServiceCost\" : 1,\r\n            \"anotherService\" : 1,\r\n            \"anotherServiceCost\" :1,\r\n            \"localCollect\" : true,\r\n            \"internationalService\" : 1,\r\n            \"internationalServiceCost\" : 1,\r\n            \"dispatchTime\" : 1,\r\n            \"itemCountry\" : \"Serbia\",\r\n            \"itemCity\" : \"f\",\r\n            \"returnDays\" : 1,\r\n            \"returns\": 1,\r\n            \"returnAccept\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/create?userId=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"create"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Seller Central > Create listing (multiple variations)",
+					"item": [
+						{
+							"name": "Create Item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"catId\" : 1, \r\n            \"title\": \"My Item\",\r\n            \"condId\" :1, \r\n            \"conditions\": 1, \r\n            \"image\": \"1.jpg\",\r\n            \"images\": [\"1.png\", \"2.png\", \"3.png\"],\r\n            \"currency\":1,\r\n            \"condDesc\": \"this is optional field.\", \r\n            \"itemDescription\": \"Option[String]\",\r\n            \"listingFormat\": 1,\r\n            \"nowPrice\": 1,\r\n            \"quantity\": 1,\r\n            \"listingDuration\": 1,\r\n            \"startingPrice\" : 1,\r\n            \"reservePrice\" : 1,\r\n            \"domesticService\" : 1,\r\n            \"domesticServiceCost\" : 1,\r\n            \"anotherService\" : 1,\r\n            \"anotherServiceCost\" :1,\r\n            \"localCollect\" : true,\r\n            \"internationalService\" : 1,\r\n            \"internationalServiceCost\" : 1,\r\n            \"dispatchTime\" : 1,\r\n            \"itemCountry\" : \"Serbia\",\r\n            \"itemCity\" : \"f\",\r\n            \"returnDays\" : 1,\r\n            \"returns\": 1,\r\n            \"returnAccept\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/create?userId=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"create"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > List of listings",
+					"item": [
+						{
+							"name": "Get Recent Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/item/recent?userId=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"recent"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Items",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\":[2,3,4]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Items By State",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/item?filter=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Item",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/item/search?keyword=My&catId=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "My"
+										},
+										{
+											"key": "catId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "ItemController"
+				},
+				{
+					"name": "User > Listing details",
+					"item": [
+						{
+							"name": "Set Sold",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/item/setting/sold?id=9",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"setting",
+										"sold"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Bidding",
+					"item": [
+						{
+							"name": "get BidList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/bid",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create A Bid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"itemId\": 1,\r\n    \"price\": 500,\r\n    \"currencyId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/bid",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Status",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/bid?id=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bid"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Bid Count",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/bid/count",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bid",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Watchlist",
+					"item": [
+						{
+							"name": "Get Whitelist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/item/whitelist",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"whitelist"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Homepage",
+					"item": [
+						{
+							"name": "Get top categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/category/top",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"category",
+										"top"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Categories - Get Top Category",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/admin/category/top",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"category",
+												"top"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 07:03:19 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "247"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category\": {\n            \"name\": \"Car\",\n            \"id\": 1,\n            \"parentId\": 0,\n            \"conditionType\": \"condition1\"\n        },\n        \"children\": [\n            {\n                \"category\": {\n                    \"name\": \"Venz\",\n                    \"id\": 2,\n                    \"parentId\": 1,\n                    \"conditionType\": \"condition2\"\n                }\n            },\n            {\n                \"category\": {\n                    \"name\": \"Wuaz\",\n                    \"id\": 3,\n                    \"parentId\": 1,\n                    \"conditionType\": \"condition3\"\n                }\n            }\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get all categories( 4 level)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/category/all",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"category",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Recent Item Views",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/item/recent?userId=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"recent"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Categories - Get Top Category",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/admin/category/top",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"category",
+												"top"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 24 May 2022 07:03:19 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "247"
+										},
+										{
+											"key": "Server",
+											"value": "Jetty(9.4.42.v20210604)"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"category\": {\n            \"name\": \"Car\",\n            \"id\": 1,\n            \"parentId\": 0,\n            \"conditionType\": \"condition1\"\n        },\n        \"children\": [\n            {\n                \"category\": {\n                    \"name\": \"Venz\",\n                    \"id\": 2,\n                    \"parentId\": 1,\n                    \"conditionType\": \"condition2\"\n                }\n            },\n            {\n                \"category\": {\n                    \"name\": \"Wuaz\",\n                    \"id\": 3,\n                    \"parentId\": 1,\n                    \"conditionType\": \"condition3\"\n                }\n            }\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Create Listing(Item)to test",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"sellerId\": 1,\r\n            \"catId\" : 1, \r\n            \"title\": \"String\",\r\n            \"condId\" :1, \r\n            \"conditions\": 1, \r\n            \"image\": \"1.jpg\",\r\n            \"currency\":1,\r\n            \"conditionDetails\": \"Option[String] = None\", \r\n            \"photos\": [],\r\n            \"itemDescription\": \"Option[String]\",\r\n            \"listingFormat\": 1,\r\n            \"nowPrice\": 1,\r\n            \"quantity\": 1,\r\n            \"listingDuration\": 1,\r\n            \"startingPrice\" : 1,\r\n            \"reservePrice\" : 1,\r\n            \r\n            \"postInfo\":{\r\n                \"domesticService\" : 1,\r\n                \"domesticServiceCost\" : 1,\r\n                \"anotherService\" : 1,\r\n                \"anotherServiceCost\" :1,\r\n                \"localCollect\" : true,\r\n                \"internationalService\" : 1,\r\n                \"internationalServiceCost\" : 1,\r\n                \"dispatchTime\" : 1,\r\n                \"itemCountry\" : 1,\r\n                \"itemCity\" : \"f\",\r\n                \"returnDays\" : 1,\r\n                \"returnType\" : 0\r\n            }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/create?userId=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"create"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Shopping cart",
+					"item": [
+						{
+							"name": "get cart items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/cart",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add item to cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"itemId\": 2,\r\n    \"itemVariantId\": 2,\r\n    \"qty\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/cart",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save for later",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/cart/save-for-later?id=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cart",
+										"save-for-later"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "move to cart",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/cart/move-to-cart?id=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cart",
+										"move-to-cart"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cart summary of account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/cart/summary",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cart",
+										"summary"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Purchases > Orders",
+					"item": [
+						{
+							"name": "get order list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/order?duration=500&status=0",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"order"
+									],
+									"query": [
+										{
+											"key": "duration",
+											"value": "500"
+										},
+										{
+											"key": "status",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/order/details?id=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"order",
+										"details"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sellerId\": 9,\r\n    \"payment\": 1,\r\n    \"delivery\": 7,\r\n    \"trackingId\": 2,\r\n    \"items\": [\"adf\",\"uu\"],\r\n    \"status\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/order",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete order",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/order?id=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"order"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User > Seller Central > Listings",
+					"item": [
+						{
+							"name": "Search Active Item",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"searchString\": \"My\",\r\n    \"days\": 1,\r\n    \"searchType\": 0,\r\n    \"priceType\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/search/active",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"search",
+										"active"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Sold Item",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"searchString\": \"My\",\r\n    \"days\": 30,\r\n    \"searchType\": 0,\r\n    \"priceType\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/search/sold",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"search",
+										"sold"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Unsold Item",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"searchString\": \"My\",\r\n    \"days\": 30,\r\n    \"searchType\": 0,\r\n    \"priceType\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/search/unsold",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"search",
+										"unsold"
+									],
+									"query": [
+										{
+											"key": "state",
+											"value": "0",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Items",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\" : [2,3,4,5],\r\n    \"reason\": \"This is not on my list.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/delete",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "state",
+											"value": "0",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Item Quantity",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/item/account/update?id=2&amount=15",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"item",
+										"account",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										},
+										{
+											"key": "amount",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "StartFragment\n\nIn the \"**Listings**\" subsection, sellers will see all their listings. The listings are divided into 3 sub-subsections depending on their current status.\n\n1.  All active listings will be listed in the \"**Active**\" sub-subsection. Please see the description \"**Active**\".\n2.  If the quantity of items available in the fixed price listings reaches **0** and if these listings still have time left, then these listings will automatically be moved from the \"**Active**\" sub-subsection to the \"**Out of stock**\" sub-subsection. In the \"**Out of stock**\" section, these lists will remain active until their remaining time expires, the seller can also increase the quantity of items and then these listings will be automatically moved from the \"**Out of stock**\" to the \"**Active**\". Please see description \"**Out of stock**\".\n3.  All unsold items (including deleted listings) will be listed in the \"**Unsold**\" sub-subsection. Please see the description \"**Unsold**\".\n    \n\n\\====================================================================\n\nA menu will be available on the left side of this page, through which sellers can access all other subsectors in the \"**Seller Central**\", there is also a button \"**Create listing**\" and if sellers click on it, they will be transferred to \"**Create listing - step 1**\" page. From this menu, sellers can access the following subsections:\n\nOverview  \nListings  \nOrders  \nShipping labels  \nSettings  \nPerformance\n\nWhen sellers visit the \"**Listings**\" subsection, they will see the \"**Active**\" listings by default. At the top of the page there will be a menu through which sellers can move between different status such as \"**Active**\", \"**Out of stock**\" and \"**Unsold**\". Each status name will be preceded by the number of listings available in that particular status, such as \"99 Active\", \"0 Out of stock\" and \"8 Unsold\".\n\n\\====================================================================\n\n## **Active listings**\n\nSketches **697**. **698**, **699** and **701**\n\nThere are **two filters**:\n\n**The first filter** is a drop-down menu with pre-filled values, each of these values ​​will show only the listings that correspond to the selected value. The default value is \"**Al listings**\", so all active listings will be displayed. All available values ​​in this drop-down menu are:  \n**All listings** - this will show all active listings, ie. **Fixed price**, **Auction** and **Auction + Fixed Price**.  \n**Fixed price** \\- this will only show fixed price lists, ie. \"Buy it Now\" price.  \n**Auction** \\- This will only show auction style lists.  \n**Auction + Fixed price** - this will only show auction style listings with a fixed price as an additional option, ie. \"Buy it Now\" price.\n\n**The second filter** is for search, it combines a drop-down menu with pre-filled values ​​and an empty field in which sellers must enter what they are looking for, first sellers must select a value (which is a filter) from the drop-down menu and then in the empty field they must enter what they are looking for. The default value in the drop-down menu is \"**Item title**\", so sellers must enter keywords in the blank field that match the title of the item they are looking for. The words / digits entered in this empty field will be searched only in the selected directory, ie. \"**Item title**\" and \"**NSLN**\". All available values ​​in this drop-down menu are:  \n**Item title** - when sellers have selected an \"Item title\" value from the drop-down menu and entered keywords in the blank field, then they should click on the \"**Magnifier**\" icon and then all the results that match their the search criteria will be displayed.  \n**NSLN** \\- when sellers have selected an \"NSLN\" value from the drop-down menu and entered 12 digits corresponding to the listing number in the blank field, then they should click on the \"**Magnifier**\" icon and then all the results that correspond to their the search criteria will be displayed.  \n\"**Reset**\" button - this button will clear the results found that come from the second filter, ie. search menu, when the sellers click this button, the found results will be cleared and the listings corresponding to the value of the 1st filter will be displayed (drop-down menu).\n\nThe **number** of all \"**Active**\" listings that match the selected filters will be displayed.\n\nOn the page with the \"**Active**\" listings, the listings will have the following:\n\n**Listing format** - the listing format will be displayed by an icon that corresponds to the listing format, ie. fixed price listings and auction-style listings will have a different icon for each. The listings that combine the Auction + Buy it Now will show the icon corresponding to the auction style listings.\n\n**Item Photo** - if this is an auction style listing or a fixed price listing with a single variation of the item, in these cases the main photo of these listings will be displayed, which is also a link to these listings. If this is a fixed price listing with multiple variations of the item, in this case the photo of the concrete variation will be displayed, which is also a link to this listing.\n\n**Item Title** - the title of this listing will be displayed, which is also a link to this listing.\n\n**NSLN** \\- the 12-digit identification number of the listing will be displayed.\n\n**Variation Details** - this will be displayed only for listings with multiple variations of the item, so the details of the individual variation of the item will be displayed, such as Size: XS, Color: Dark Blue, Material: Cotton.\n\n**Quantity** \\- the available quantities of items will be displayed only for the fixed price listings, they will be displayed in separate fields. The seller can click on this field and a \"**Save**\" button will appear below the quantity field, so the seller can edit the available quantity directly in the field - to increase or decrease it and then click on the \"**Save**\" button, to save the changes made. After a successfully change of quantity, the word \"**Updated**\" will appear under the box with the changed quantity. Because the quantity of items in auction-style listings and classified ads is always 1, the available quantity of items for these listing formats will not be displayed.\n\n**Price** \\- varies for different listing formats as follows:  \n**Fixed price listings** - if this is a fixed price listing with a single variation of the item, in this case the \"Buy it Now\" price of this listing will be displayed. If this is a fixed price listing with multiple variations of the item, in this case the \"Buy it Now\" price of the concrete variation will be displayed.  \n**Auction style listings** - the starting or current bid will be displayed, ie. if there is no bid yet, the starting bid will be displayed, but if buyers have already made a bid for this item, the current bid will be displayed.  \n**Auction style listings + Fixed price** \\- the starting or current bid will be displayed, ie. if there is no bid yet, the starting bid will be displayed, but if buyers have already made a bid for this item, the current bid will be displayed. The fixed price will also be displayed, ie. \"Buy it Now\" price.\n\n**Bids** \\- the number of bids (0, 1, 2, 3, etc.) will be displayed only if it is an auction style listing or auction style listing with a fixed price as an additional option, ie. \"Buy it Now\" price. When sellers click on the number of bids, ie. \"0 bids\", \"1 bid\", \"2 bids\", etc., a pop-up window will appear (sketches **649** and **650**) in which will have the following:\n\nBEGINNING OF EXPLANATION >>>\n\nThe following will appear in the \"**Bid history**\" pop-up window:  \n**Bidders** - The total number of bidders (who have already submitted a bid) in this auction will be displayed.  \n**Bids** - The total number of bids submitted by bidders in this auction will be displayed.  \n**Time left** - Will be displayed after how long, ie. Days, Hours, Minutes, Seconds this auction will end. If the remaining time is a few days, the remaining time will be displayed in the following format: Days Hours Minutes. If the remaining time is less than 24 hours, the remaining time will be displayed in the following format: Hours Minutes Seconds. If the remaining time is less than 1 hour, the remaining time will be displayed in the following format: Minutes Seconds. If the remaining time is less than 1 minute, the remaining time will be displayed in the following format: Seconds.  \n**Username** \\- Only the first and last character of the username of the bidder will be displayed.  \n**Bid amount** - Each bid amount submitted by bidders will be displayed in the following format: US $123.45 ie. will show the currency symbol + the amount.  \n**Bid date** - The date on which this bid is made by the user will be displayed in the following format: Day Month Year Hours Minutes Seconds Time zone, for example: 19 Jan 2020 12:34:56 BST.  \nThere is a drop-down menu \"**Three points**\" with the value \"**Cancel bid**\". If the seller clicks '**Cancel bid**', they will be transferred to the \"**Canceling bid - seller side**\" page where they can cancel the selected bid (sketches **652**, **653** and **654**).\n\nIf the seller clicks the \"**Cancel bid**\" button in Bid history, they will be transferred to the \"**Canceling bid - seller side**\" page (sketches **652**, **653** and **654**), where they must enter a comment on the reason for this cancellation, the following attributes will be displayed:  \n**Bidder** \\- The username of the user who submitted this bid will be displayed.  \n**Comment field** \\- Sellers must enter an explanation for the reason they want to cancel this bid, they can add up to 150 characters.  \n\"**Cancel bid**\" button - If the seller has entered a comment and then clicked this button, the bid will be canceled and a pop-up window will appear notifying the seller that this bid has been canceled (sketch **654**). Also, the **bidder** will receive the corresponding email (sketch **222**).  \n// Clarification: if the seller has canceled the bid and if this is the highest bid, then in this case the next highest bid will replace it. If there is no other bid, then another bidwill not replace the deleted one.  \n\"**Back**\" button - If users click this button, they will be returned to the previous page.\n\nIf the Seller canceled a bid, then this Bidder will receive the corresponding email (sketch **222**), which contains the following:  \n**Subject** \\- standard static text, including the title of the item  \n**From**  \n**Sent**  \nThere will be **standard static explanatory text** (including the **name of the user**).  \n**Item Title** - the title of the listing will be displayed, which is also a link to the \"**Listing details**\" page.  \n**Reason for deletion** - The reason selected by the seller when deleting this auction style listing will be displayed.\n\n<<< THE EXPLANATION IS OVER\n\n**Time left** - There will be displayed after how long each one of the existing listings will end, ie. days, hours, minutes, seconds.\n\n*   If the remaining time is a few days, the remaining time will be displayed in the following format: Days Hours Minutes.\n*   If the remaining time is less than 24 hours, the remaining time will be displayed in the following format: Hours Minutes Seconds.\n*   If the remaining time is less than 1 hour, the remaining time will be displayed in the following format: Minutes.\n*   If the remaining time is less than 1 minute, the remaining time will be displayed in the following format: > 1 minute (the symbol > will precede the number 1 because the remaining time is less than 1 minute).\n*   If this is a fixed price listing and sellers have selected \"Till sale\" from the drop-down menu related to the listing duration, then the remaining time will show \"Till sale\".\n    \n\nIf sellers want to delete multiple listings at once, they must click the checkbox of each listings they want to delete, then click the \"**Action on X selected**\" button and a drop-down menu will appear from which sellers must select \"**Delete**\", after which all selected listings will be deleted.  \n**Checkbox** \\- each listed listing will have a checkbox that helps sellers manage many listings at once, just they need to select each listing they want to delete by clicking the checkbox in the desired listings.  \n\"**Action on X selected**\" button - if sellers have selected listings by clicking the checkbox in the desired listings, the number \"**0**\" in the \"**Action on 0 selected**\" button will be changed to show the number of selected listings. If sellers click this button, a drop-down menu with the \"**Delete**\" action will appear, so if they click on the \"**Delete**\" action, they will be transferred to the \"**Delete my listing**\" page, where they must select a reason for deleting of these listings and click the appropriate button, then the listings will be deleted.\n\n**Actions** \\- there will be an \"**Edit**\" button on the right side of which there is an **arrow pointing down**.\n\nBEGINNING OF EXPLANATION >>>\n\nIf sellers click the \"**Edit**\" button, they will be transferred to the \"**Create listing - step 2**\" page, where they will see all the information they have already entered / selected when they created this listing. They can edit this which they want and then they have to click on the \"**Save changes**\" button to save the changes made (sketch **163**). Users can also click the \"**Cancel**\" button and will then be returned to this page.  \nIf sellers have clicked the \"**Save changes**\" button and if the information entered is correct, they will be transferred to the \"**Congratulations**\" page (sketch **191**), where the following information will be displayed:  \n**Congratulatory message** for successfully revised listing  \n**Item Photo** \\- the main photo of this listing will be displayed, which is also a link to this listing.  \n**Item Title** - the title of this listing will be displayed, which is also a link to this listing.  \n**NSLN** \\- the 12-digit ID number of this listing will be displayed.  \n**Sharing** \\- sellers can click on some of these icons and share the listing with their friends and followers on Instagram, Facebook, Twitter, YouTube and Email.  \n\"**List another item**\" button - If the have clicked on this button, they will be redirected to the \"**Create listing - step 1**\" page.  \n\"**Revise another listing**\" button - If the seller clicks this button, they will be redirected to **My NichoShop > Seller Central > Listings > Active listings**.\n\n<<< THE EXPLANATION IS OVER\n\nIf sellers click on this **arrow pointing down** (on the right side of \"**Edit**\" button), then a drop-down menu will appear with the \"**Sell similar**\" and \"**Delete**\" actions.  \n**Sell similar** \\- If sellers click on this action, they will be transferred to the \"**Create listing - step 2**\" page, where they can create a new listing. The category, condition, item specifics, listing format, shipping services and returns will be pre-filled and will be the same as those in the listing from which the sellers clicked the \"Sell similar\" action.  \n**Delete** \\- If sellers click on this action, they will be transferred to the \"**Delete my listing**\" page (sketch **701**), where they must select a reason for deleting of this listing and click the appropriate button, then the listing will be deleted. Please see the description \"**Delete my listing**\".\n\n\"**Results per page**\" filter - the seller can click on this drop-down menu and choose how many results per page they want to see, they can choose between 50, 100, 150 and 200 items per page.\n\n// Clarification: if the seller has created a listing for an item with multiple variations, then in **Seller Central > Listings > Active**, this listing will not be listed as a single listing, ie. each individual variant of this item will be listed as a separate listing on a new line, and will have associated attributes such as:  \n**Checkbox**  \n**Item Photo** - The main photo of the individual variation of the item will be displayed.  \n**Item Title** - The title of this listing will be displayed, which is also a link to this listing.  \n**NSLN** \\- Only NSLN will be the same for each variation of the item.  \n**Variation Details** - The details of the individual variation of the item will be displayed, such as Size: XS, Color: Dark Blue, Material: Cotton.  \n**Quantity** \\- The available quantity of the individual variation of the item will be displayed.  \n**Price** \\- The price of the individual variation of the item will be displayed.  \n**Time left**  \n\"**Edit**\" button  \n\"**Sell similar**\" button  \n\"**Delete**\" button\n\n\\====================================================================\n\n## **Delete my listing**\n\nSketch **700**\n\nIf sellers click the \"**Delete**\" action, they will be transferred to this page, where they will see the following:\n\n**Item Title** - The title of the listings that sellers want to delete will be displayed. Each individual title in the listing will be displayed on a new line.\n\n**Reason for deleting their listings** - there will be 4 radio buttons and each of them is responsible for a different reason. The seller must choose a reason to delete their listings, they must click on one of the following 4 radio buttons:  \nThe item is no longer available for sale  \nThere was an error in the listing  \nThere was an error in starting price, Buy it now price, or reserve price  \nThe item was lost or broken\n\n\"**Confirm**\" button - if sellers have chosen a reason for deleting of these listings and when sellers click this button, then the listings will be deleted. After successfully deleting the listings, a box will appear above the list of listings indicating the sellers that they have successfully deleted their listings (sketch **702**).  \n// Clarification if an auction style listing is deleted by the seller, then this auction will be immediately removed from the \"**Biddng**\" section of any user who has submitted a bid for this auction.\n\n\"**Cancel**\" button - if sellers click this button, they will be returned to the previous page.\n\nIf the seller has deleted an auction style listing, then each user who has submitted a bid for this auction will receive the corresponding email (sketch **223**), which contains the following:  \n**Subject** \\- standard static text, including the title of the item  \n**From**  \n**Sent**  \nThere will be **standard static explanatory text**, including the **name of the bidder**.  \n**Item Title** - the title of the listing will be displayed, which is also a link to the \"**Listing details**\" page.  \n**Reason for deletion** \\- The reason selected by the seller when deleting this auction style listing will be displayed.\n\nEndFragment"
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Categories - Create Category",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/category/parent/51?name=Second",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"parent",
+										"51"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Second"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories - Get All Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/all",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories - Get Top Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/top",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"top"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories - Get Conditions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/conditions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"conditions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories - Get Specifics",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/specifics",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"specifics"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories -  Get Children from Parent",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/children/45",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"children",
+										"45"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories -  Move Category",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/parent/46/48",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"parent",
+										"46",
+										"48"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories - Update Category Condition",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"conditions\": [\r\n        \"1\",\r\n        \"2\"\r\n    ],\r\n    \"specifics\":[\r\n        {\r\n            \"id\":1,\r\n            \"name\":\"uuu\",\r\n            \"defaultValue\":\"baby\",\r\n            \"required\":true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/category/52",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"52"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories - Delete Category",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/53",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"53"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories - Rename Category",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/rename/52/123",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"rename",
+										"52",
+										"123"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error(Don't use this)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/category/top",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"category",
+										"top"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/login?login=developeradmin&password=123456&rememberMe=true&grecaptcha=6Ld9ZTgdAAAAAFN8gTK7t4qY9kg5UPwSDxIANoOQ",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"login"
+									],
+									"query": [
+										{
+											"key": "login",
+											"value": "developeradmin"
+										},
+										{
+											"key": "password",
+											"value": "123456"
+										},
+										{
+											"key": "rememberMe",
+											"value": "true"
+										},
+										{
+											"key": "grecaptcha",
+											"value": "6Ld9ZTgdAAAAAFN8gTK7t4qY9kg5UPwSDxIANoOQ"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login - Confirm",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "duo_code",
+											"value": "WEjcq4B78dgbreFWqub6rhylOd5zhsOP",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "state",
+											"value": "a0a92e2b9a85f2e84e4c7a3411aa659e4aa6",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/login/confirm?state=8a00d0e023bb6efc91240d8a6f52ee5a8c4b&duo_code=xhSRCr38KNitPqQ0TtUMr1b0fJyANbVm",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"login",
+										"confirm"
+									],
+									"query": [
+										{
+											"key": "state",
+											"value": "8a00d0e023bb6efc91240d8a6f52ee5a8c4b"
+										},
+										{
+											"key": "duo_code",
+											"value": "xhSRCr38KNitPqQ0TtUMr1b0fJyANbVm"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login SUC",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/login/suc?code=768207",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"login",
+										"suc"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "768207"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin > Administrator",
+					"item": [
+						{
+							"name": "Change Password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"curPass\":\"123456\",\r\n    \"newPass\":\"1234567\",\r\n    \"username\":\"nichoshop\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/administrator/upgrade/password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"administrator",
+										"upgrade",
+										"password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upgrade Email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/administrator/upgrade/email?value=younglady19931114@gmail.com",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"administrator",
+										"upgrade",
+										"email"
+									],
+									"query": [
+										{
+											"key": "value",
+											"value": "younglady19931114@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upgrade PhoneNumber",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/administrator/upgrade/phoneNum?value=19852362031",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"administrator",
+										"upgrade",
+										"phoneNum"
+									],
+									"query": [
+										{
+											"key": "value",
+											"value": "19852362031"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check SUC",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/administrator/check-suc?code=563104&sucType=4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"administrator",
+										"check-suc"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "563104"
+										},
+										{
+											"key": "sucType",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:9090/api/v1"
+		}
+	]
+}

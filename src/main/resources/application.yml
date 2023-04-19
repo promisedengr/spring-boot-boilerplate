@@ -1,0 +1,50 @@
+spring:
+  datasource:
+#    url: jdbc:h2:mem:test_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:mysql://localhost:3306/nichoshop
+    username: root
+    password:
+  tomcat:
+    max-wait: 20000
+    max-active: 50
+    max-idle: 20
+    min-idle: 15
+  jpa:
+    # hibernate:
+      # ddl-auto: create-drop
+    properties:
+      hibernate:
+#        dialect: org.hibernate.dialect.H2Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        id:
+          new_generator_mappings: false
+
+server:
+  port: 9090 # This is the default port anyway, but you can change it here
+  servlet:
+    context-path: "/api/v1"
+
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+      expire-length: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 miliseconds
+      
+app:
+  file:
+    upload-dir: "./uploads/files"
+smtp:
+  port: 2525
+  ssl: false
+  tls: false
+  host: smtp.elasticemail.com
+  login: "admin@nichoshop.com"
+  password: "E34E2BF0F5301E18FCE73156BAF0DDBC140C"
+  from:
+    name: No-reply
+    address: "no-reply@nichoshop.com"
+
+memcache:
+  ip: "127.0.0.1"
+  port: 11211

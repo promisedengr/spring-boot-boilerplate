@@ -1,75 +1,61 @@
-# Welcome to Food Eazy! ✨
+# README #
 
-Food Eazy, is an online platform to order food and avoiding the hassle of going out or paying in cash. The users can opt for home delivery or take away as per thier choice and can pay thorugh cash or online methods (PayTM). In the times of COVID-19 where social distancing is such an important measure we think our website can help restaurants and customers.
+This README would normally document whatever steps are necessary to get your application up and running.
 
-## Features and Functionalities 😃
-**User features**
- - User sign up and login
- - 2 factor authentication using email
- - Password Reset (Forget Password)
- - Search for food items
- - Sort the food items (By name or price)
- - Save Cart
- - Delete Cart
- - Order Type - Take Away or Delivery
- - Payment Methods - Cash or Online (using PayTM wallet, Debit/Credit card, Net Banking)
- - View your current and previous orders
- 
- **Admin features** 
- 
- - Add new dishes
- - Delete dishes
- ## Screenshots
- ### Login Page![enter image description here](https://raw.githubusercontent.com/Devforlife07/foodeazy/master/readme_images/login.png?token=ALT5AMAOLRKFR423UUHLK6C7KJJ4Y)
-### Email Verify Page![enter image description here](https://raw.githubusercontent.com/mihir0699/foodeazy/master/readme_images/verify.png?token=ALT5AMCAUZLVKWU4UFAGZVC7KJKEG)
-### Home Page
-![enter image description here](https://raw.githubusercontent.com/mihir0699/foodeazy/master/readme_images/menu.png?token=ALT5AMAG4JWL7EOHY2IT7JC7KJKAQ)
+### What is this repository for? ###
 
-### Cart
-![enter image description here](https://raw.githubusercontent.com/mihir0699/foodeazy/master/readme_images/cart.png?token=ALT5AMCPL6C2W723CZYJZZK7KJKYY)
-### Checkout
-![enter image description here](https://raw.githubusercontent.com/mihir0699/foodeazy/master/readme_images/checkout.png?token=ALT5AMHX44VS5BX2PHTDSY27KJK4K)
-### Add Dish (Admin)
-![enter image description here](https://raw.githubusercontent.com/mihir0699/foodeazy/master/readme_images/add_dish.png?token=ALT5AMAOEZ2YQ2ECJJMYZCC7KJK6I)
-### Delete Dish (Admin)
-![enter image description here](https://raw.githubusercontent.com/mihir0699/foodeazy/master/readme_images/delete_items.png?token=ALT5AMHLZNKOIMXWOKUKY7K7KJLCE)
-## Tech Stack 💻
+* Quick summary
+* Version
+* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
- - [React.js](https://reactjs.org/)
- - [Node.js](https://nodejs.org/en/)
- - [Express.js](https://expressjs.com/)
- - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
- - [Material UI](https://material-ui.com/)
- - [React Bootstrap](https://react-bootstrap.github.io/)
+### How do I get set up? ###
 
-## API :man_technologist:
+* Summary of set up
+* Configuration
+* Dependencies
+* Database configuration
+* How to run tests
+* Deployment instructions
 
- - [PayTM API](https://developer.paytm.com/docs/)
- - [Send Grid  API](https://sendgrid.com/)
- - [Cloudinary API](https://cloudinary.com/)
+### Contribution guidelines ###
 
-## Installation :zap:
+* Writing tests
+* Code review
+* Other guidelines
 
- **1. Clone this repo by running the following command :-**
- ```bash
-  git clone https://github.com/Devforlife07/FoodEazy
-  cd foodeazy
- ```
- 
- **2. Now install all the required packages by running the following commands :-**
- ```bash
-  npm install 
-  npm run install-client
- ```
- **3. Now start the react and node server together by running the following command :-**
- ```bash
-  npm run dev
- ```
- **3. Create a `.env` file in the project root folder and copy the format of `.env.sample` file.**
+### Who do I talk to? ###
 
-   - `.env.sample` file contains all the environment variables required for running the project.
-   
-   
- **4.** **🎉  Open your browser and go to  `https://localhost:3000`**
+* Repo owner or admin
+* Other community or team contact
 
+
+
+
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.2/maven-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.2/maven-plugin/reference/html/#build-image)
+* [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web)
+* [Spring Security](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web.security)
+* [JDBC API](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#data.sql)
+* [WebSocket](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#messaging.websockets)
+* [Java Mail Sender](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#io.email)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
+* [Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
+* [Authenticating a User with LDAP](https://spring.io/guides/gs/authenticating-ldap/)
+* [Accessing Relational Data using JDBC with Spring](https://spring.io/guides/gs/relational-data-access/)
+* [Managing Transactions](https://spring.io/guides/gs/managing-transactions/)
+* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+* [Using WebSocket to build an interactive web application](https://spring.io/guides/gs/messaging-stomp-websocket/)
 
